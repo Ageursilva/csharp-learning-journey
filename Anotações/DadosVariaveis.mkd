@@ -1,0 +1,217 @@
+Em C#, variáveis são como contêineres que armazenam dados. Cada variável tem um nome, um tipo de dado e um valor. O tipo de dado define o tipo de informação que a variável pode armazenar (números inteiros, números decimais, texto, etc.) e a quantidade de memória que ela ocupa.
+
+### Declaração e Inicialização de Variáveis
+
+Para usar uma variável, você precisa primeiro declará-la, especificando seu tipo e nome. Opcionalmente, você pode inicializá-la (atribuir um valor) no momento da declaração ou posteriormente.
+
+```csharp
+// Declaração de uma variável
+int idade;
+
+// Inicialização de uma variável
+idade = 30;
+
+// Declaração e inicialização na mesma linha
+string nome = "Maria";
+
+// Declaração de múltiplas variáveis do mesmo tipo
+double altura = 1.75, peso = 70.2;
+```
+
+### Palavra-chave `var`
+
+A palavra-chave `var` permite que o compilador infira o tipo de uma variável com base no valor atribuído a ela. Isso pode tornar o código mais conciso, mas a variável ainda terá um tipo forte após a inferência.
+
+```csharp
+var quantidade = 100; // O compilador infere 'int'
+var preco = 19.99m;  // O compilador infere 'decimal'
+var mensagem = "Olá, C#"; // O compilador infere 'string'
+```
+
+**Importante:** `var` só pode ser usada quando a variável é inicializada no momento da declaração.
+
+### Tipos de Dados em C#
+
+C# possui uma rica variedade de tipos de dados, que podem ser broadly categorizados em:
+
+1.  **Tipos de Valor (Value Types):** Armazenam seus dados diretamente em sua própria locação de memória. Quando você atribui um tipo de valor a outro, uma cópia dos dados é criada.
+2.  **Tipos de Referência (Reference Types):** Armazenam uma referência (endereço de memória) para os dados, que estão localizados em outra parte da memória (heap). Quando você atribui um tipo de referência a outro, ambos passam a apontar para o mesmo local de dados.
+
+
+#### Tipos de Valor
+
+##### Tipos Numéricos Inteiros
+
+Usados para armazenar números inteiros (sem casas decimais).
+
+*   `sbyte`: -128 a 127 (1 byte)
+*   `byte`: 0 a 255 (1 byte)
+*   `short`: -32.768 a 32.767 (2 bytes)
+*   `ushort`: 0 a 65.535 (2 bytes)
+*   `int`: -2.147.483.648 a 2.147.483.647 (4 bytes). **É o tipo inteiro mais comum.**
+*   `uint`: 0 a 4.294.967.295 (4 bytes)
+*   `long`: -9.223.372.036.854.775.808 a 9.223.372.036.854.775.807 (8 bytes)
+*   `ulong`: 0 a 18.446.744.073.709.551.615 (8 bytes)
+
+Exemplo:
+```csharp
+int contador = 100;
+long populacaoMundial = 7_900_000_000L; // O 'L' indica um literal long
+```
+
+##### Tipos Numéricos de Ponto Flutuante
+
+Usados para armazenar números com casas decimais.
+
+*   `float`: Precisão de 7 dígitos (4 bytes). **Use o sufixo `F` ou `f` para literais float.**
+*   `double`: Precisão de 15-16 dígitos (8 bytes). **É o tipo decimal padrão e mais comum.**
+*   `decimal`: Precisão de 28-29 dígitos (16 bytes). **Ideal para cálculos financeiros e monetários, pois oferece maior precisão. Use o sufixo `M` ou `m` para literais decimal.**
+
+Exemplo:
+```csharp
+float temperatura = 25.5f;
+double pi = 3.1415926535;
+decimal salario = 1500.75m;
+```
+
+##### Tipo Booleano
+
+*   `bool`: Armazena `true` ou `false` (verdadeiro ou falso).
+
+Exemplo:
+```csharp
+bool estaChovendo = true;
+bool temDesconto = false;
+```
+
+##### Tipo Caractere
+
+*   `char`: Armazena um único caractere Unicode (2 bytes). Os literais `char` são definidos com aspas simples.
+
+Exemplo:
+```csharp
+char letra = 'A';
+char simbolo = '$';
+```
+
+##### Structs
+
+Tipos de valor definidos pelo usuário. Representam estruturas de dados leves. Exemplo: `DateTime`, `Point`.
+
+#### Tipos de Referência
+
+##### String
+
+*   `string`: Armazena uma sequência de caracteres Unicode. Os literais `string` são definidos com aspas duplas. É um tipo de referência, mas se comporta de forma um pouco diferente (é imutável).
+
+Exemplo:
+```csharp
+string saudacao = "Olá, mundo!";
+string nomeCompleto = "João Silva";
+```
+É importante notar que strings são imutáveis. Qualquer operação que parece modificar uma string, na verdade, cria uma nova string.
+```csharp
+string original = "Hello";
+string nova = original.ToUpper(); // 'original' ainda é "Hello", 'nova' é "HELLO"
+```
+
+##### Object
+
+*   `object`: É o tipo base para todos os outros tipos em C# (tanto de valor quanto de referência). Pode armazenar um valor de qualquer tipo. Usar `object` pode causar boxing/unboxing e perda de performance.
+
+Exemplo:
+```csharp
+object meuObjeto = 123; // int é "boxado" para object
+meuObjeto = "Qualquer coisa"; // string é "boxada" para object
+```
+
+##### Classes
+
+Tipos de referência definidos pelo usuário. Representam objetos complexos e são a base da programação orientada a objetos em C#.
+
+Exemplo:
+```csharp
+public class Pessoa
+{
+    public string Nome { get; set; }
+    public int Idade { get; set; }
+}
+
+Pessoa joao = new Pessoa(); // 'joao' é uma referência a um objeto Pessoa
+joao.Nome = "João";
+joao.Idade = 30;
+```
+
+##### Interfaces
+
+Contratos que definem um conjunto de membros que um tipo deve implementar.
+
+##### Delegates
+
+Tipos que representam referências a métodos com uma assinatura específica.
+
+### Conversão de Tipos (Type Conversion)
+
+A conversão de tipos pode ser implícita (automática) ou explícita (requer casting).
+
+*   **Conversão Implícita:** Ocorre automaticamente quando não há perda de dados.
+    ```csharp
+    int meuInt = 10;
+    double meuDouble = meuInt; // int para double é implícita
+    ```
+
+*   **Conversão Explícita (Casting):** Requer que você especifique o tipo de destino. Usada quando há uma possível perda de dados ou quando você sabe que a conversão é segura.
+    ```csharp
+    double outroDouble = 9.81;
+    int outroInt = (int)outroDouble; // double para int, perda de dados (0.81)
+    Console.WriteLine(outroInt); // Saída: 9
+    ```
+
+*   **Métodos `Convert` e `Parse`:** A classe `Convert` e os métodos `Parse`/`TryParse` (presentes em muitos tipos de valor) são usados para conversões mais complexas, especialmente entre strings e tipos numéricos/booleanos.
+
+    ```csharp
+    string numeroTexto = "123";
+    int numero = int.Parse(numeroTexto); // Converte string para int
+
+    string valorBoolean = "true";
+    bool estaAtivo = Convert.ToBoolean(valorBoolean);
+
+    int idadeString = 25;
+    string mensagemIdade = idadeString.ToString(); // Converte int para string
+    ```
+
+### Valores Padrão (Default Values)
+
+Quando uma variável é declarada mas não inicializada explicitamente, ela recebe um valor padrão.
+
+*   Tipos numéricos: `0`
+*   `bool`: `false`
+*   `char`: `\0` (o caractere nulo)
+*   Tipos de referência (incluindo `string`): `null`
+
+Exemplo:
+```csharp
+int defaultInt; // defaultInt será 0
+string defaultString; // defaultString será null
+```
+
+### Constantes
+
+Valores que não podem ser alterados após a compilação. São definidos com a palavra-chave `const`.
+
+```csharp
+const double PI = 3.14159;
+const string MENSAGEM_BOAS_VINDAS = "Bem-vindo!";
+```
+
+### Exemplo
+
+Para ilustrar alguns tipos de dados e variáveis:
+```csharp
+int numeroInteiro = 42;
+double numeroDecimal = 3.14159;
+string saudacao = "Olá, C#!";
+bool isActive = true;
+char primeiraLetra = 'G';
+decimal preco = 99.99m;
+```
