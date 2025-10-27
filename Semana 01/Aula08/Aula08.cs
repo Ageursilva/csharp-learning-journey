@@ -1,7 +1,7 @@
 using System;
 //Entrada de dados
 //Conversão simples
-class Aula008
+class Aula08
 {
     static void Main()
     {
