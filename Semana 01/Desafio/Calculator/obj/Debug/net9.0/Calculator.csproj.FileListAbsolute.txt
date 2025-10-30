@@ -1,0 +1,15 @@
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\Calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\Calculator.AssemblyInfoInputs.cache
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\Calculator.AssemblyInfo.cs
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\Calculator.sourcelink.json
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\bin\Debug\net9.0\Calculator.exe
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\bin\Debug\net9.0\Calculator.deps.json
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\bin\Debug\net9.0\Calculator.runtimeconfig.json
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\bin\Debug\net9.0\Calculator.dll
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\bin\Debug\net9.0\Calculator.pdb
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\Calculator.dll
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\refint\Calculator.dll
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\Calculator.pdb
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\Calculator.genruntimeconfig.cache
+C:\Users\Ageu4\Documentos\C#\Aulas\Semana 01\Desafio\Calculator\obj\Debug\net9.0\ref\Calculator.dll
