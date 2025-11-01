@@ -17,7 +17,8 @@ namespace Calculator
             Console.WriteLine("2 - Subtração");
             Console.WriteLine("3 - Multiplicação");
             Console.WriteLine("4 - Divisão");
-            Console.WriteLine("5 - Sair");
+            Console.WriteLine("5 - Juros Composto");
+            Console.WriteLine("6 - Sair");
 
             Console.WriteLine("------------------");
 
@@ -29,7 +30,8 @@ namespace Calculator
                 case 2: Subtracao(); break;
                 case 3: Multiplicacao(); break;
                 case 4: Divisao(); break;
-                case 5: System.Environment.Exit(0); break;
+                case 5: JurosComposto(); break;
+                case 6: System.Environment.Exit(0); break;
                 default: Menu(); break;
 
 
@@ -94,5 +96,29 @@ namespace Calculator
             Menu();
         }
 
+        static void JurosComposto()
+        {
+            Console.Clear();
+            Console.WriteLine("Digite o valor inicial: ");
+            decimal capital = decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite a taxa de juros (ex: 0,05 para 5%): ");
+            decimal taxa = decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Digite a quantidade de meses: ");
+            int meses = int.Parse(Console.ReadLine());
+            decimal montante = capital;
+
+            for (int mesAtual = 1; mesAtual <= meses; mesAtual++)
+            {
+                montante = montante * (1 + taxa);
+                Console.WriteLine($"Mês {mesAtual}: {montante:C2}");
+            }
+            Console.WriteLine($"O montante final após {meses} meses é {montante:C2}");
+            Console.ReadKey();
+            Menu();
+        }
+
     }
 }
+
